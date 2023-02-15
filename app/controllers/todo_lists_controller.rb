@@ -1,6 +1,6 @@
 class TodoListsController < ApplicationController
   def index
-    lists = TodoList.order(created_at: :desc)
+    lists = TodoList.order(:created_at)
     render json: lists
   end
 
