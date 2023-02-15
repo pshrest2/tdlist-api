@@ -7,15 +7,21 @@ const TodoListContainer = () => {
     const [todoItem, setTodoItem] = useState('');
     const [todoLists, setTodoLists] = useState([]);
 
-    const updateTodoList = (id, done) => {
+    const deleteTodoList = (id) => {
+        axios.delete(`/api/v1/todo_lists/${id}`).then(res => {
+            const updatedTodoLists = todoLists.filter(list => list.id !== id);
+            setTodoLists(updatedTodoLists);
+        }).catch(err => console.log(err));
+    }
+    const updateTodoList = (id, data) => {
         axios.put(`/api/v1/todo_lists/${id}`, {
-            todo_list: { done }
+            todo_list: data
         }).then(res => {
             const updatedTodoLists = todoLists.map(list => list.id === id ? res.data : list);
             setTodoLists(updatedTodoLists);
         }).catch(err => console.log(err));
     }
-    const addTodoItem = (e) => {
+    const createTodoItem = (e) => {
         if (e.key === "Enter" && e.target.value !== "") {
             axios.post("/api/v1/todo_lists", {
                 todo_list: { title: e.target.value, done: false }
@@ -42,7 +48,7 @@ const TodoListContainer = () => {
                     type='text'
                     placeholder='Input a new task and press Enter'
                     maxLength="75"
-                    onKeyDown={addTodoItem}
+                    onKeyDown={createTodoItem}
                     value={todoItem}
                     onChange={e => setTodoItem(e.target.value)}
                 />
@@ -51,10 +57,9 @@ const TodoListContainer = () => {
                 <ul className='listItems'>
                     {todoLists.map(tdlist => (
                         <li className='item' tdlist={tdlist} key={tdlist.id}>
-                            <Form.Check type='checkbox' label={tdlist.title} onChange={(e) => updateTodoList(tdlist.id, e.target.checked)} checked={tdlist.done} />
+                            <Form.Check type='checkbox' label={tdlist.title} onChange={(e) => updateTodoList(tdlist.id, { data: e.target.checked })} checked={tdlist.done} />
                             <div className="buttons-container">
-                                <Button variant='secondary'>Edit</Button>
-                                <Button variant='danger'>Delete</Button>
+                                <Button variant='danger' onClick={() => deleteTodoList(tdlist.id)}>Delete</Button>
                             </div>
 
                         </li>
