@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button'
 import axios from 'axios';
 
 const TodoListContainer = () => {
@@ -49,9 +51,12 @@ const TodoListContainer = () => {
                 <ul className='listItems'>
                     {todoLists.map(tdlist => (
                         <li className='item' tdlist={tdlist} key={tdlist.id}>
-                            <input className="itemCheckbox" type="checkbox" onChange={(e) => updateTodoList(tdlist.id, e.target.checked)} checked={tdlist.done} />
-                            <label className="itemDisplay">{tdlist.title}</label>
-                            <span className="removeItemButton">x</span>
+                            <Form.Check type='checkbox' label={tdlist.title} onChange={(e) => updateTodoList(tdlist.id, e.target.checked)} checked={tdlist.done} />
+                            <div className="buttons-container">
+                                <Button variant='secondary'>Edit</Button>
+                                <Button variant='danger'>Delete</Button>
+                            </div>
+
                         </li>
                     ))}
                 </ul>
