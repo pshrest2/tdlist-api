@@ -1,9 +1,4 @@
-.mainContainer {
-  width: 70%;
-  height: 100vh;
-  position: relative;
-  margin: 0 auto;
-}
+@import url("bootstrap/dist/css/bootstrap.min.css");
 
 .wrapItems {
   position: absolute;
@@ -12,11 +7,6 @@
   overflow: auto;
 }
 
-.topHeading {
-  color: rgb(48, 2, 2);
-  padding: 7px;
-  text-align: center;
-}
 
 ul.listItems {
   padding: 0 30px;
@@ -31,7 +21,7 @@ li.item {
   padding: 5px 0;
 }
 
-.item .buttons-container button{
+.item .buttons-container button {
   margin: 0px 5px;
 }
 

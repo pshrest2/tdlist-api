@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 
-const TodoListContainer = () => {
+const TodoListPage = () => {
   const [todoItem, setTodoItem] = useState("");
   const [todoLists, setTodoLists] = useState([]);
 
@@ -59,7 +59,7 @@ const TodoListContainer = () => {
           className="newTask"
           type="text"
           placeholder="Input a new task and press Enter"
-          maxLength="75"
+          maxLength={75}
           onKeyDown={createTodoItem}
           value={todoItem}
           onChange={(e) => setTodoItem(e.target.value)}
@@ -68,7 +68,7 @@ const TodoListContainer = () => {
       <div className="wrapItems">
         <ul className="listItems">
           {todoLists.map((tdlist) => (
-            <li className="item" tdlist={tdlist} key={tdlist.id}>
+            <li className="item" key={tdlist.id}>
               <Form.Check
                 type="checkbox"
                 label={tdlist.title}
@@ -93,4 +93,4 @@ const TodoListContainer = () => {
   );
 };
 
-export default TodoListContainer;
+export default TodoListPage;
