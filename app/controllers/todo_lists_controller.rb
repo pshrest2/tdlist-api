@@ -1,7 +1,15 @@
 class TodoListsController < ApplicationController
   def index
-    lists = TodoList.order(:created_at)
-    render json: lists
+    begin
+      lists = TodoList.order(:created_at)
+      render json: lists, status: 200
+    rescue => e
+      render json: {
+        message: "Error getting todo list",
+        status: 500
+      }
+    end
+    
   end
 
   def create

@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
-const AppNav = () => {
+const MyNav = () => {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -18,7 +18,7 @@ const AppNav = () => {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/todo-list">Link</Nav.Link>
+            <Nav.Link href="/todo-list">TODO</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -35,4 +35,4 @@ const AppNav = () => {
   );
 };
 
-export default AppNav;
+export default MyNav;
