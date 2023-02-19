@@ -2,7 +2,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
-import { toast } from "react-toastify";
 import MySpinner from "../../shared/MySpinner";
 
 const TodoListPage = () => {
@@ -60,14 +59,14 @@ const TodoListPage = () => {
     axios
       .get("/api/v1/todo_lists")
       .then((res) => setTodoLists(res.data))
-      .catch((err) => toast.error(err));
+      .catch((err) => console.log(err));
   }, []);
 
   useEffect(() => {
     setFetchingList(true);
     fetchTodoLists()
       .then(() => setFetchingList(false))
-      .catch(() => toast.error("Somethign went wrong while fetching todo list"))
+      .catch(() => console.log("Something went wrong"))
       .finally(() => setFetchingList(false));
   }, [fetchTodoLists]);
 
