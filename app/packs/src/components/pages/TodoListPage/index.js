@@ -3,7 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { toast } from "react-toastify";
-import MySpinner from "components/shared/MySpinner";
+import MySpinner from "../../shared/MySpinner";
 
 const TodoListPage = () => {
   const [todoItem, setTodoItem] = useState("");
