@@ -4,6 +4,7 @@ import HomePage from "./components/pages/HomePage";
 import Layout from "./components/shared/Layout";
 import TodoListPage from "./components/pages/TodoListPage";
 import MyNav from "./components/shared/MyNav";
+import Signup from "./components/pages/Signup";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/todo-list" element={<TodoListPage />} />
+          <Route path="/signup" element={<Signup />} />
           <Route path="*" element={"Not Found"} />
         </Routes>
       </Layout>

@@ -18,7 +18,8 @@ const MyNav = () => {
             navbarScroll
           >
             <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/todo-list">TODO</Nav.Link>
+            <Nav.Link href="/todo-list">Todo</Nav.Link>
+            <Nav.Link href="/signup">Signup</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
