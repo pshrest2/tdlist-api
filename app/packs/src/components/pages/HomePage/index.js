@@ -1,11 +1,9 @@
 import React from "react";
-import "./index.css";
+import PageContainer from "../../shared/PageContainer";
 
 const HomePage = () => {
   return (
-    <div className="home-page">
-      <div className="top-heading">Welcome to Todo App</div>
-    </div>
+    <PageContainer title="Welcome to Todo App">In Development...</PageContainer>
   );
 };
 

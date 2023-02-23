@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import MySpinner from "../../shared/MySpinner";
+import PageContainer from "../../shared/PageContainer";
 
 const TodoListPage = () => {
   const [todoItem, setTodoItem] = useState("");
@@ -73,7 +74,7 @@ const TodoListPage = () => {
   if (fetchingList) return <MySpinner />;
 
   return (
-    <div>
+    <PageContainer title="Todo Lists">
       <div className="taskContainer">
         <input
           className="newTask"
@@ -109,7 +110,7 @@ const TodoListPage = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </PageContainer>
   );
 };
 
