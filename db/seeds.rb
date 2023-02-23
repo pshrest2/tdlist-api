@@ -6,6 +6,7 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-pranaya = User.create(name: "Pranaya")
-pranaya.todo_lists.create(title: "Schedule Meeting", done: false)
-pranaya.todo_lists.create(title: "Call home", done: false)
+pranaya = User.create(username: "pshrestha", email: "pranaya.shrestha2@gmail.com", name: "Pranaya", phone: "6623806746")
+
+pranaya.todo_lists.create(title: "Schedule Meeting", done: false, due_date: Time.now + (180 * 60))
+pranaya.todo_lists.create(title: "Call home", done: false, due_date: DateTime.now + 2)

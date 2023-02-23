@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_20_215723) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_23_214301) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -20,6 +20,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_215723) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id", null: false
+    t.datetime "due_date"
     t.index ["user_id"], name: "index_todo_lists_on_user_id"
   end
 
@@ -27,6 +28,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_20_215723) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
+    t.string "phone"
+    t.string "email"
+    t.index ["email", "username"], name: "index_users_on_email_and_username", unique: true
   end
 
   add_foreign_key "todo_lists", "users"
