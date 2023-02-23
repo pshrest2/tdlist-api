@@ -1,7 +1,4 @@
 {
-  "browserslist": [
-    "defaults"
-  ],
   "dependencies": {
     "@babel/preset-react": "^7.18.6",
     "@rails/webpacker": "5.4.4",
@@ -38,7 +35,7 @@
     "type": "git",
     "url": "git+https://github.com/pshrest2/tdlist-api.git"
   },
-  "author": "",
+  "author": "Pranaya Shrestha",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/pshrest2/tdlist-api/issues"
