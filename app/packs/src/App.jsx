@@ -15,7 +15,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/todo-list" element={<TodoListPage />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/sign-up" element={<Signup />} />
           <Route path="*" element={"Not Found"} />
         </Routes>
       </Layout>
